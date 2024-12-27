@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="formstyle.css">
+    <script src="formscript.js" defer></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <h1>Our Services</h1>
+        <button id="openModalButton" class="button">Contact Us</button>
+    </div>
+
+    <!-- Dialog Box with Form -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalButton" class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="8d06a276-690d-46fb-bd95-3e792f4d81d0">
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="phone" name="phone" maxlength="10" placeholder="Phone No." required>
+                <label>Select Service:</label>
+                <div class="service-tiles">
+                    <div class="service-tile" data-service="Android Development">Android Development</div>
+                    <div class="service-tile" data-service="Web Development">Web Development</div>
+                    <div class="service-tile" data-service="Consultation">Consultation</div>
+                </div>
+                <input type="hidden" id="service" name="service" required>
+                <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+                <input type="hidden" name="redirect" value="https://raghavg.vercel.app">
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
